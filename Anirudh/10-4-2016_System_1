@@ -1,0 +1,570 @@
+                     ^
+% Invalid input detected at '^' marker.
+
+Sw1(config)#enable password cisco
+Sw1(config)#line con 0
+Sw1(config-line)#enable password cisco
+Sw1(config)#line con 0
+Sw1(config-line)#password cisco
+Sw1(config-line)#login synchronous
+                       ^
+% Invalid input detected at '^' marker.
+
+Sw1(config-line)#logging synchronous
+Sw1(config-line)#^Z 
+Sw1#
+00:09:44: %SYS-5-CONFIG_I: Configured from console by console
+Sw1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Sw1(config)#line vty 0 4
+Sw1(config-line)#password cisco
+Sw1(config-line)#login
+Sw1(config-line)#exit
+Sw1(config)#vty 0 4
+              ^
+% Invalid input detected at '^' marker.
+
+Sw1(config)#line vty 0 4
+Sw1(config-line)#logging synchronous
+Sw1(config-line)#^Z
+Sw1#
+00:12:34: %SYS-5-CONFIG_I: Configured from console by console
+Sw1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Sw1(config)#int vlan 14
+Sw1(config-if)#
+00:13:02: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan14, changed state to down
+Sw1(config-if)#ip address 172.31.1.11/24 submask 255.255.255.0
+                                     ^
+% Invalid input detected at '^' marker.
+
+Sw1(config-if)#ip address 172.31.1.11 submask 255.255.255.0   
+                                      ^
+% Invalid input detected at '^' marker.
+
+Sw1(config-if)#ip address 172.31.1.11 255.255.255.0        
+Sw1(config-if)#int vlan 14
+Sw1(config-if)#switchport mode access
+                ^
+% Invalid input detected at '^' marker.
+
+Sw1(config-if)#^Z
+Sw1#
+00:16:58: %SYS-5-CONFIG_I: Configured from console by console
+Sw1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Sw1(config)#int vlan 14
+Sw1(config-if)#switchport mode access
+                ^
+% Invalid input detected at '^' marker.
+
+Sw1(config-if)#^Z
+Sw1#
+00:18:08: %SYS-5-CONFIG_I: Configured from console by console
+Sw1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Sw1(config)#int f011
+                  ^
+% Invalid input detected at '^' marker.
+
+Sw1(config)#int f0/11
+Sw1(config-if)#switchport mode access
+Sw1(config-if)#switchport access vlan 14
+% Access VLAN does not exist. Creating vlan 14
+Sw1(config-if)#
+00:18:50: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to down
+Sw1(config-if)#vlan 14
+Sw1(config-vlan)#name Blue
+00:19:20: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan14, changed state to up
+Sw1(config-vlan)#name Blue
+Sw1(config-vlan)#exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sw1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+00:29:26: %SYS-5-CONFIG_I: Configured from console by console
+Sw1>
+00:45:38: %LINK-3-UPDOWN: Interface FastEthernet0/21, changed state to up
+Sw1>
+00:45:40: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/21, changed state to up
+Sw1>
+00:46:05: %LINK-3-UPDOWN: Interface FastEthernet0/19, changed state to up
+00:46:06: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/19, changed state to up
+Sw1>
+00:46:10: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+Sw1>ena     
+Password: 
+Sw1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Sw1(config)#line con 0 4
+                       ^
+% Invalid input detected at '^' marker.
+
+Sw1(config)#line vty 0 4
+Sw1(config-line)#password cisco
+Sw1(config-line)#login
+Sw1(config-line)#logging synchronous
+Sw1(config-line)#int vlan 1
+Sw1(config-if)#ip address 172.31.14.101 255.255.255.0
+Sw1(config-if)#no shut down
+                       ^
+% Invalid input detected at '^' marker.
+
+Sw1(config-if)#no shutdown
+Sw1(config-if)#exit
+Sw1(config)#vlan 14 
+Sw1(config-vlan)#name Blue
+Sw1(config-vlan)#int f0/11
+Sw1(config-if)#^Z                       
+Sw1#c
+00:54:37: %SYS-5-CONFIG_I: Configured from console by console
+Sw1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Sw1(config)#
+00:55:02: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/19, changed state to down
+Sw1(config)#
+00:55:06: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/19, changed state to up
+Sw1(config)#int vlan 1
+Sw1(config-if)#vlan 23
+Sw1(config-vlan)#name Green
+Sw1(config-vlan)#int f0/11
+Sw1(config-if)#switchport access vlan 14
+Sw1(config-if)#switchport access
+% Incomplete command.
+
+Sw1(config-if)#switchport mode access
+Sw1(config-if)#int f0/21
+Sw1(config-if)#switchport mode trunk
+Command rejected: An interface whose trunk encapsulation is "Auto" can not be configured to "trunk" mode.
+Sw1(config-if)#switchport trunk encapsualtion dot1q
+                                       ^
+% Invalid input detected at '^' marker.
+
+Sw1(config-if)#switchport trunk encapsulation dot1q 
+Sw1(config-if)#switchport mode trunk               
+Sw1(config-if)#int f0/19
+Sw1(config-if)#switchport trunk encapsulation dot1q
+Sw1(config-if)#switchport mode trunk               
+Sw1(config-if)#do show running config
+show running config
+             ^
+% Invalid input detected at '^' marker.
+
+Sw1(config-if)#do show running-config 
+Building configuration...
+
+Current configuration : 1589 bytes
+!
+version 12.2
+no service pad
+service timestamps debug uptime
+service timestamps log uptime
+no service password-encryption
+!
+hostname Sw1
+!
+enable password cisco
+!
+no aaa new-model
+system mtu routing 1500
+ip subnet-zero
+!
+!
+!
+!
+!
+!
+!
+!         
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!         
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+ switchport access vlan 14
+ switchport mode access
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ ip address 172.31.14.101 255.255.255.0
+!
+interface Vlan14
+ ip address 172.31.1.11 255.255.255.0
+!
+ip classless
+ip http server
+ip http secure-server
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ password cisco
+ logging synchronous
+line vty 0 4
+ password cisco
+ logging synchronous
+ login
+line vty 5 15
+ login
+!         
+end
+
+Sw1(config-if)#^Z 
+Sw1#
+01:02:25: %SYS-5-CONFIG_I: Configured from console by console
+Sw1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Sw1(config)#copy run start
+              ^
+% Invalid input detected at '^' marker.
+
+Sw1(config)#^Z
+Sw1#
+01:02:47: %SYS-5-CONFIG_I: Configured from console by console
+Sw1#copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Sw1#sh vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/12, Fa0/13
+                                                Fa0/14, Fa0/15, Fa0/16, Fa0/17
+                                                Fa0/18, Fa0/20, Fa0/22, Fa0/23
+                                                Fa0/24, Gi0/1, Gi0/2
+14   Blue                             active    Fa0/11
+23   Green                            active    
+1002 fddi-default                     act/unsup 
+1003 token-ring-default               act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trnet-default                    act/unsup 
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0   
+14   enet  100014     1500  -      -      -        -    -        0      0   
+23   enet  100023     1500  -      -      -        -    -        0      0   
+1002 fddi  101002     1500  -      -      -        -    -        0      0   
+1003 tr    101003     1500  -      -      -        -    -        0      0   
+          
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+
+Sw1#sh ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  172.31.14.101   YES manual up                    up      
+Vlan14                 172.31.1.11     YES manual up                    up      
+FastEthernet0/1        unassigned      YES unset  down                  down    
+FastEthernet0/2        unassigned      YES unset  down                  down    
+FastEthernet0/3        unassigned      YES unset  down                  down    
+FastEthernet0/4        unassigned      YES unset  down                  down    
+FastEthernet0/5        unassigned      YES unset  down                  down    
+FastEthernet0/6        unassigned      YES unset  down                  down    
+FastEthernet0/7        unassigned      YES unset  down                  down    
+FastEthernet0/8        unassigned      YES unset  down                  down    
+FastEthernet0/9        unassigned      YES unset  down                  down    
+FastEthernet0/10       unassigned      YES unset  down                  down    
+FastEthernet0/11       unassigned      YES unset  up                    up      
+FastEthernet0/12       unassigned      YES unset  down                  down    
+FastEthernet0/13       unassigned      YES unset  down                  down    
+FastEthernet0/14       unassigned      YES unset  down                  down    
+FastEthernet0/15       unassigned      YES unset  down                  down    
+FastEthernet0/16       unassigned      YES unset  down                  down    
+FastEthernet0/17       unassigned      YES unset  down                  down    
+FastEthernet0/18       unassigned      YES unset  down                  down    
+FastEthernet0/19       unassigned      YES unset  up                    up      
+FastEthernet0/20       unassigned      YES unset  down                  down    
+FastEthernet0/21       unassigned      YES unset  up                    up      
+FastEthernet0/22       unassigned      YES unset  down                  down    
+FastEthernet0/23       unassigned      YES unset  down                  down    
+FastEthernet0/24       unassigned      YES unset  down                  down    
+GigabitEthernet0/1     unassigned      YES unset  down                  down    
+GigabitEthernet0/2     unassigned      YES unset  down                  down    
+Sw1#sh int trunk
+
+Port        Mode             Encapsulation  Status        Native vlan
+Fa0/19      on               802.1q         trunking      1
+Fa0/21      on               802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Fa0/19              1-4094
+Fa0/21              1-4094
+
+Port                Vlans allowed and active in management domain
+Fa0/19              1,14,23
+Fa0/21              1,14,23
+
+Port                Vlans in spanning tree forwarding state and not pruned
+Fa0/19              1,14,23
+Fa0/21              1,14,23
+Sw1#ping 172.31.1.13
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.31.1.13, timeout is 2 seconds:
+..!!!
+Success rate is 60 percent (3/5), round-trip min/avg/max = 1/3/8 ms
+Sw1#ping 172.31.1.14
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.31.1.14, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+Sw1#ping 172.31.1.12
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.31.1.12, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+Sw1#
+01:06:26: %IP-4-DUPADDR: Duplicate address 172.31.14.101 on Vlan14, sourced by 6805.ca42.cbc3
+Sw1#sh cdp nei
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+Sw2              Fas 0/21          140           S I      WS-C3560- Fas 0/21
+switch63         Fas 0/19          166           S I      WS-C3560- Fas 0/19
+Sw1#ping 172.31.1.12
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.31.1.12, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+Sw1#conf t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Sw1(config)#int f0/11
+Sw1(config-if)#switchport access vlan 14
+Sw1(config-if)#switchport mode access 
+Sw1(config-if)#^Z
+Sw1#p
+01:18:40: %SYS-5-CONFIG_I: Configured from console by console
+Sw1#ping 172.31.1.12
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.31.1.12, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+Sw1#conf t   
+Enter configuration commands, one per line.  End with CNTL/Z.
+Sw1(config)#int f0/21
+Sw1(config-if)#switchport trunk encapsulation dot1q
+Sw1(config-if)#switchport mode trunk                
+Sw1(config-if)#^Z
+Sw1#con
+01:21:03: %SYS-5-CONFIG_I: Configured from console by console
+Sw1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Sw1(config)#int f0/19
+Sw1(config-if)#switchport trunk encapsulation dot1q
+Sw1(config-if)#switchport mode trunk               
+Sw1(config-if)#^Z
+Sw1#sh 
+01:21:21: %SYS-5-CONFIG_I: Configured from console by console
+Sw1#sh int trunk
+
+Port        Mode             Encapsulation  Status        Native vlan
+Fa0/19      on               802.1q         trunking      1
+Fa0/21      on               802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Fa0/19              1-4094
+Fa0/21              1-4094
+
+Port                Vlans allowed and active in management domain
+Fa0/19              1,14,23
+Fa0/21              1,14,23
+
+Port                Vlans in spanning tree forwarding state and not pruned
+Fa0/19              1,14,23
+Fa0/21              1,14,23
+Sw1#ping 172.31.1.12
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.31.1.12, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+Sw1#sh ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  172.31.14.101   YES manual up                    up      
+Vlan14                 172.31.1.11     YES manual up                    up      
+FastEthernet0/1        unassigned      YES unset  down                  down    
+FastEthernet0/2        unassigned      YES unset  down                  down    
+FastEthernet0/3        unassigned      YES unset  down                  down    
+FastEthernet0/4        unassigned      YES unset  down                  down    
+FastEthernet0/5        unassigned      YES unset  down                  down    
+FastEthernet0/6        unassigned      YES unset  down                  down    
+FastEthernet0/7        unassigned      YES unset  down                  down    
+FastEthernet0/8        unassigned      YES unset  down                  down    
+FastEthernet0/9        unassigned      YES unset  down                  down    
+FastEthernet0/10       unassigned      YES unset  down                  down    
+FastEthernet0/11       unassigned      YES unset  up                    up      
+FastEthernet0/12       unassigned      YES unset  down                  down    
+FastEthernet0/13       unassigned      YES unset  down                  down    
+FastEthernet0/14       unassigned      YES unset  down                  down    
+FastEthernet0/15       unassigned      YES unset  down                  down    
+FastEthernet0/16       unassigned      YES unset  down                  down    
+FastEthernet0/17       unassigned      YES unset  down                  down    
+FastEthernet0/18       unassigned      YES unset  down                  down    
+FastEthernet0/19       unassigned      YES unset  up                    up      
+FastEthernet0/20       unassigned      YES unset  down                  down    
+          
+Sw1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Sw1(config)#no int vlan 14
+Sw1(config)#int vla
+01:28:42: %LINK-5-CHANGED: Interface Vlan14, changed state to administratively down
+01:28:43: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan14, changed state to down
+Sw1(config)#int vlan 1
+Sw1(config-if)#ip address 172.31.1.11 255.255.255.0
+Sw1(config-if)#do sh vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/12, Fa0/13
+                                                Fa0/14, Fa0/15, Fa0/16, Fa0/17
+                                                Fa0/18, Fa0/20, Fa0/22, Fa0/23
+                                                Fa0/24, Gi0/1, Gi0/2
+14   Blue                             active    Fa0/11
+23   Green                            active    
+1002 fddi-default                     act/unsup 
+1003 token-ring-default               act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trnet-default                    act/unsup 
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0   
+14   enet  100014     1500  -      -      -        -    -        0      0   
+23   enet  100023     1500  -      -      -        -    -        0      0   
+1002 fddi  101002     1500  -      -      -        -    -        0      0   
+1003 tr    101003     1500  -      -      -        -    -        0      0   
+          
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+
+Sw1(config-if)# 

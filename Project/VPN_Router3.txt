@@ -1,0 +1,26 @@
+Part 3: Router 3
+access-list 110 permit ip 172.27.3.0 0.0.0.255 172.27.1.0 0.0.0.255
+
+Step 3: Configure the ISAKMP Phase 1 properties on R3.
+R3(config)# crypto isakmp policy 10
+R3(config-isakmp)# encryption aes
+R3(config-isakmp)# authentication pre-share
+R3(config-isakmp)# group 2
+R3(config-isakmp)# exit
+R3(config)# crypto isakmp key cisco address 172.27.1.129
+
+Step 4: Configure the ISAKMP Phase 2 properties on R1.
+R3(config)# crypto ipsec transform-set VPN-SET esp-3des esp-sha-hmac
+R3(config)# crypto map VPN-MAP 10 ipsec-isakmp
+R3(config-crypto-map)# description VPN connection to R1
+R3(config-crypto-map)# set peer 172.27.1.129
+R3(config-crypto-map)# set transform-set VPN-SET
+R3(config-crypto-map)# match address 110
+R3(config-crypto-map)# exit
+
+Step 5: Configure the crypto map on the outgoing interface.
+R3(config)# interface S0/0/1
+R3(config-if)# crypto map VPN-MAP
+
+Part 4: Verify the IPsec VPN
+R3# show crypto ipsec sa

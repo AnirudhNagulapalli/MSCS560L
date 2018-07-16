@@ -1,0 +1,32 @@
+172.27.1.
+
+hostname Router1
+enable secret cisco
+enable password cisco
+
+int f0/0
+ip address 172.27.1.1 255.255.255.224
+no shutdown
+
+int s0/0/0
+ip address 172.27.1.129 255.255.255.252
+no shutdown
+
+line con 0
+password cisco
+login
+logging synchronous
+exec-timeout 0 0
+exit
+
+line vty 0 4
+password cisco
+login
+logging synchronous
+exit
+
+service password-encryption
+
+ip route 172.27.2.32 255.255.255.240 172.27.1.130
+ip route 172.27.1.132 255.255.255.252 172.27.1.130
+ip route 172.27.3.48 255.255.255.248 172.27.1.134
